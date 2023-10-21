@@ -5,7 +5,7 @@ import model.Produto;
 public class DescontoBaixo extends Desconto{
 
     public DescontoBaixo(Produto produto) {
-        super(produto);
+        super(produto); 
     }
 
     @Override

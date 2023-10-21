@@ -20,6 +20,31 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
+    public Produto id(int id) {
+        this.id = id;
+        return this;
+    }
+
+    public Produto nome(String nome) {
+        this.nome = nome;
+        return this;
+    }
+
+    public Produto descricao(String descricao) {
+        this.descricao = descricao;
+        return this;
+    }
+
+    public Produto preco(double preco) {
+        this.preco = preco;
+        return this;
+    }
+
+    public Produto quantidade(int quantidade) {
+        this.quantidade = quantidade;
+        return this;
+    }
+
     public int getId() {
         return id;
     }
