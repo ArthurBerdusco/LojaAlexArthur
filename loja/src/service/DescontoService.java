@@ -7,7 +7,13 @@ import model.Produto;
 
 public class DescontoService {
 
-    public double calcularDesconto(Produto produto){
+    private Produto produto;
+
+    public DescontoService(Produto produto){
+        this.produto = produto;
+    }
+
+    public Double calcularDesconto(){
 
         Double valor;
 
@@ -19,5 +25,13 @@ public class DescontoService {
         return valor;
 
     }
+
+    @Override
+    public String toString() {
+
+        Double valorPedido = produto.getQuantidade() * produto.getPreco();
+        return "[ ID=" + produto.getId() + ", NOME=" + produto.getNome() + ", VALOR S/DESCONTO=" + valorPedido + ", VALOR C/DESCONTO=" + (valorPedido - calcularDesconto()) + ", DESCONTO=" + calcularDesconto() + " ]";
+    }
+
 
 }

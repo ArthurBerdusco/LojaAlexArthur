@@ -1,5 +1,5 @@
+import controller.DescontoController;
 import model.Produto;
-import service.DescontoService;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -14,19 +14,20 @@ public class App {
         var produto4 = new Produto(4, "Tablet", "Smart 55", 2500, 8);
         var produto5 = new Produto(5, "Notebook", "Smart 55", 1300, 11);
 
+        var controllerDesconto = new DescontoController();
 
-        var service = new DescontoService();
-
-        test(service.calcularDesconto(produto1));
-        test(service.calcularDesconto(produto2));
-        test(service.calcularDesconto(produto3));
-        test(service.calcularDesconto(produto4));
-        test(service.calcularDesconto(produto5));
+        test(controllerDesconto.exibirDesconto(produto1));
+        test(controllerDesconto.exibirDesconto(produto2));
+        test(controllerDesconto.exibirDesconto(produto3));
+        test(controllerDesconto.exibirDesconto(produto4));
+        test(controllerDesconto.exibirDesconto(produto5));
 
     }
 
-    private static void test(double desconto) {
-        System.out.println("VALOR DO DESCONTO: " + desconto);
+    private static void test(String desconto) {
+        if (desconto == null)
+            return;
+        System.out.println(desconto);
     }
 
 }

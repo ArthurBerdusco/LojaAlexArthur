@@ -7,6 +7,7 @@ public class Produto {
     private String descricao;
     private double preco;
     private int quantidade;
+    private double desconto;
 
     public Produto() {
     }
@@ -59,8 +60,12 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
-    
+    public double getDesconto() {
+        return desconto;
+    }
 
-    
-    
+    public void setDesconto(double desconto) {
+        this.desconto = desconto;
+    }
+
 }
