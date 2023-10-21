@@ -4,11 +4,8 @@ import model.Produto;
 
 public class DescontoBaixo extends Desconto{
 
-    private Produto produto;
-
     public DescontoBaixo(Produto produto) {
         super(produto);
-        this.produto = produto;
     }
 
     @Override
