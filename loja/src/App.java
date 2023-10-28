@@ -1,5 +1,6 @@
 import controller.DescontoController;
 import model.Produto;
+import service.DescontoService;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -13,22 +14,19 @@ public class App {
         var produto3 = new Produto().nome("PS5").descricao("Spider").preco(4300).quantidade(6);
         var produto4 = new Produto().nome("Tablet").descricao("Samsung").preco(2500).quantidade(8);
         var produto5 = new Produto().nome("Notebook").descricao("Dell").preco(1300).quantidade(11);
-        
 
-        var controllerDesconto = new DescontoController();
-
-        test(controllerDesconto.exibirDesconto(produto1));
-        test(controllerDesconto.exibirDesconto(produto2));
-        test(controllerDesconto.exibirDesconto(produto3));
-        test(controllerDesconto.exibirDesconto(produto4));
-        test(controllerDesconto.exibirDesconto(produto5));
+        test(new DescontoService(produto1));
+        test(new DescontoService(produto2));
+        test(new DescontoService(produto3));
+        test(new DescontoService(produto4));
+        test(new DescontoService(produto5));
 
     }
 
-    private static void test(String desconto) {
+    private static void test(DescontoService desconto) {
         if (desconto == null)
             return;
-        System.out.println(desconto);
+        System.out.println(desconto.toString());
     }
 
 }
