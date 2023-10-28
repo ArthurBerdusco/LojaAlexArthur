@@ -1,4 +1,3 @@
-import controller.DescontoController;
 import model.Produto;
 import service.DescontoService;
 
